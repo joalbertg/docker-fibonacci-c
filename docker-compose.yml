@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: fibonacci-c
+    container_name: fibonacci
+    command: sh -c "/root/./bin < /app/in.txt > /app/out.txt"
+    volumes:
+      - $PWD/app:/app
+

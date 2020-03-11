@@ -1,0 +1,9 @@
+FROM alpine:3 
+
+RUN apk add --update-cache \
+    gcc \
+    libc-dev && \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /app
+

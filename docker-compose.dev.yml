@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile-lib
+    image: fibonacci-c-lib
+    container_name: fibonacci-dev
+    command: >
+      sh -c "gcc fibonacci.c -o bin &&
+      ./bin < in.txt > out.txt &&
+      rm bin"
+    volumes:
+      - $PWD/app:/app
+
